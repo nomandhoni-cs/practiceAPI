@@ -58,6 +58,7 @@
 
     <script>
       function userInfoCall() {
+        //Get user info from the API
         fetch("https://randomuser.me/api/")
           .then((res) => res.json())
           .then((data) => {
@@ -71,13 +72,9 @@
               "address"
             ).innerText = `${userInfo.name.title} ${userInfo.name.last} lives in ${userAddress}`;
             document.getElementById("image").src = userInfo.picture.large;
-            console.log(userInfo);
           });
       }
       userInfoCall();
-      //   setInterval(() => {
-
-      //     userInfoCall();}, 3000);
     </script>
   </body>
 </html>
